@@ -1,0 +1,10 @@
+<p> Attach CSV of US locations </p>
+
+ <%= form_tag upload_cities_path, :multipart => true do %>
+   <%= file_field_tag :file %>
+   <%= submit_tag "Upload" %>
+ <% end %>
+
+ 
+
+

@@ -1,0 +1,17 @@
+<% @listings.each do |listing| %>
+ <div class="<%= cycle('grey', 'light-blue') %>" >
+	<%= listing.title.html_safe %> </br> 
+  <%= listing.body.html_safe %> 
+	
+	</br> </br> </br>
+
+  <%= button_to "Email", root_path %> 
+  <%= button_to "Close", root_path %>
+
+ </div>
+
+  </br>
+	</br>
+  </br>
+<% end %>
+

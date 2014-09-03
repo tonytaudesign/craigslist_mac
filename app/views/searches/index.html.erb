@@ -1,0 +1,32 @@
+<p> Add Custom Search Search </p>
+
+<%= form_for @search do |f| %>
+<p>Name</p>
+  <%= f.text_field :name %>
+<p>Accepted</p>
+  <%= f.text_field :accepted %>
+<p>Reject</p> 
+  <%= f.text_field :denied %>
+  <%= f.submit %>
+<% end %>
+
+
+    <% @searches.each do |search| %>
+      <tr>
+        <td><%= search.name %></td>
+        <td><%= search.accepted %></td>
+        <td><%= search.denied %></td>
+        <td><%= search.user_id %></td>
+          <td><%= link_to 'Search', upload_listings_path(search.id) %></td>
+        <td><%= link_to 'Show', search %></td>
+        <td><%= link_to 'Edit', edit_search_path(search) %></td>
+        <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </br>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Search', new_search_path %>

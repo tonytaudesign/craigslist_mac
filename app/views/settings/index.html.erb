@@ -1,0 +1,11 @@
+<p>Settings Page </p>
+
+<%= form_tag create_mailer_path do %>
+	<p>Email</p>
+	<%= text_field_tag :email %>
+	<p>Subject</p>
+	<%= text_field_tag :subject %>
+	<p>Body</p>
+	<%= text_area_tag :body %>
+  <%= submit_tag "Send" %>
+<% end %>
